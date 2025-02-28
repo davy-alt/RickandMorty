@@ -1,0 +1,345 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --font-color: rgb(51, 51, 51);
+  --orange-400: rgb(255, 152, 0);
+  --gray-800: #272b33;
+  --gray-700: #3c3e44;
+  --gray-200: #f5f5f5;
+  --white: #fff;
+}
+
+body {
+  font-family: "Blinker", sans-serif;
+}
+
+.conteiner {
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.1rem;
+  padding: 5px 27px;
+}
+
+.navbar-nav {
+  display: flex;
+  list-style: none;
+}
+
+.nav-item .nav-link {
+  color: var(--font-color);
+  font-weight: 600;
+  margin: 0 37.5px 0 0;
+  text-decoration: none;
+}
+
+.nav-btn {
+  border: 1px solid var(--orange-400);
+  border-radius: 8px;
+  color: var(--font-color);
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 0;
+  padding: 8px 18px;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.nav-item .nav-btn:hover {
+  background-color: var(--orange-400);
+  color: var(--white);
+}
+
+.hero {
+  background-image: url("../image/hero.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.hero h1 {
+  font-size: 5.625rem;
+  font-size: 800;
+  letter-spacing: 1rem;
+}
+
+.character-conteiner {
+  background-color: var(--gray-800);
+  color: var(--white);
+  padding: 3rem 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.character-box {
+  display: flex;
+  gap: 1rem;
+  background-color: var(--gray-700);
+  letter-spacing: 0.2rem;
+  max-width: 50rem;
+  max-height: 30rem;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.character-box:hover {
+  transform: none;
+}
+
+.character-box img {
+  width: 50%;
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+}
+
+.character-info {
+  padding-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  flex: 1;
+}
+
+.character-info h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.character-info .character-link {
+  color: var(--white);
+  text-decoration: none;
+}
+
+.character-info .character-link:hover,
+.character-info h3:hover {
+  color: var(--orange-400);
+}
+
+.character-info .Alive::before {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: limegreen;
+  border-radius: 50%;
+  margin-right: 1.2rem;
+}
+
+.character-info .Dead::before {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: orangered;
+  border-radius: 50%;
+  margin-right: 1.2rem;
+}
+
+.character-location,
+.character-origin {
+  font-size: 1.1rem;
+  color: var(--font-color);
+}
+
+.character-location a,
+.character-origin a {
+  color: var(--orange-400);
+  text-decoration: none;
+}
+
+.character-location a:hover,
+.character-origin a:hover {
+  text-decoration: underline;
+}
+
+/* Ajustando a centralização do card individual na página character.html */
+.character-container {
+  display: flex;
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center; /* Centraliza verticalmente */
+  height: 90vh; /* Garante que ocupa 100% da tela */
+  width: 100%; /* Ocupa toda a largura */
+}
+
+.character-card {
+  background-color: var(--gray-700);
+  border-radius: 8px;
+  width: 70%; /* Ajuste da largura para 70% da tela */
+  max-width: 600px; /* Máximo de 600px de largura */
+  display: flex;
+  flex-direction: column; /* Itens em coluna */
+  align-items: center; /* Alinha os itens no centro */
+  gap: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  text-align: center; /* Centraliza o texto dentro do card */
+}
+
+.character-card img {
+  width: 60%; /* Ajuste para melhor encaixe */
+  border-radius: 8px;
+}
+
+.character-card .character-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centraliza o texto */
+  gap: 0.6rem;
+}
+
+.character-card h3 {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.character-card span {
+  font-size: 1rem;
+  color: var(--font-color);
+}
+
+.character-card .character-link {
+  color: var(--orange-400);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.character-card .character-link:hover {
+  text-decoration: underline;
+}
+
+.character-card .Alive::before {
+  content: "";
+  display: flex;
+  width: 10px;
+  height: 10px;
+  background-color: limegreen;
+  border-radius: 50%;
+  margin-right: 1.2rem;
+}
+
+.character-card .Dead::before {
+  content: "";
+  display: flex;
+  width: 10px;
+  height: 10px;
+  background-color: orangered;
+  border-radius: 50%;
+  margin-right: 1.2rem;
+}
+
+
+.character-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.character-card {
+  background-color: white;
+  border: 1px solid lightgrey;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 300px;
+  text-align: center;
+}
+
+.character-card img {
+  max-width: 100%;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.character-card h3 {
+  font-size: 1.5em;
+  color: black;
+  margin: 10px 0;
+}
+
+.character-card p {
+  margin: 5px 0;
+  font-size: 1rem;
+}
+
+
+.episodes-container {
+  margin: 20px;
+  padding: 20px;
+  background-color: white;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.episodes-container h2 {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+#episodes-list {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  background-color: white;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  margin: 5px 0;
+  padding: 10px;
+  font-size: 1rem;
+ 
+}
+
+
+
+a {
+  color: #2980b9;
+  text-decoration: none;
+}
+
+.status{
+  display: flex;
+  align-items: center;
+}
+
+.character-info .Alive::before {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: limegreen;
+  border-radius: 50%;
+  margin-right: 0.2rem;
+  
+}
+
+.character-info .Dead::before {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: orangered;
+  border-radius: 50%;
+  margin-right: 0.2rem;
+}
+
+
