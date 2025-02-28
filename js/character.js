@@ -82,8 +82,10 @@ const listarepisodios = (episodes) => {
 
   episodes.forEach((episode) => {
     const li = document.createElement("li");
+    li.className = "liep"
     li.textContent = `${episode.name} - ${episode.air_date}`;
     episodeslist.appendChild(li);
+    console.log(episodes  )
   });
 };
 
